@@ -70,7 +70,7 @@ BOOL isVerticalPan;
 - (void)setUpUI
 {
     if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0) {
-        self.barTintColor = nil;
+        self.barTintColor = [[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TintColor"];
         self.translucent = YES;
         self.barStyle = UIBarStyleBlack;
     }
@@ -90,6 +90,7 @@ BOOL isVerticalPan;
         _imgIcon = [[UIImageView alloc] init];
     }
     _imgIcon.frame = IMAGE_VIEW_ICON_FRAME;
+    _imgIcon.tintColor = [[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TitleColor"];
     [_imgIcon setContentMode:UIViewContentModeScaleAspectFill];
     [_imgIcon.layer setCornerRadius:IMAGE_VIEW_ICON_CORNER_RADIUS];
     [_imgIcon setClipsToBounds:YES];
@@ -102,7 +103,7 @@ BOOL isVerticalPan;
         _lblTitle = [[UILabel alloc] init];
     }
     _lblTitle.frame = LABEL_TITLE_FRAME;
-    [_lblTitle setTextColor:[UIColor whiteColor]];
+    [_lblTitle setTextColor:[[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TitleColor"]];
     [_lblTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:LABEL_TITLE_FONT_SIZE]];
     [_lblTitle setNumberOfLines:1];
     if (![_lblTitle superview]) {
@@ -114,7 +115,7 @@ BOOL isVerticalPan;
         _lblMessage = [[UILabel alloc] init];
     }
     _lblMessage.frame = LABEL_MESSAGE_FRAME;
-    [_lblMessage setTextColor:[UIColor whiteColor]];
+    [_lblMessage setTextColor:[[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TextColor"]];
     [_lblMessage setFont:[UIFont fontWithName:@"HelveticaNeue" size:LABEL_MESSAGE_FONT_SIZE]];
     [_lblMessage setNumberOfLines:2];
     _lblMessage.lineBreakMode = NSLineBreakByTruncatingTail;
@@ -157,6 +158,7 @@ BOOL isVerticalPan;
     
     /// Image
     if (image) {
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [_imgIcon setImage:image];
     }
     else {
