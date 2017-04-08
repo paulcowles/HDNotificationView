@@ -70,7 +70,7 @@ BOOL isVerticalPan;
 - (void)setUpUI
 {
     if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0) {
-        self.barTintColor = [[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TintColor"];
+        self.barTintColor = [[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBars.TintColor"];
         self.translucent = YES;
         self.barStyle = UIBarStyleBlack;
     }
@@ -90,7 +90,7 @@ BOOL isVerticalPan;
         _imgIcon = [[UIImageView alloc] init];
     }
     _imgIcon.frame = IMAGE_VIEW_ICON_FRAME;
-    _imgIcon.tintColor = [[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TitleColor"];
+    _imgIcon.tintColor = [[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBars.TitleColor"];
     [_imgIcon setContentMode:UIViewContentModeScaleAspectFill];
     [_imgIcon.layer setCornerRadius:IMAGE_VIEW_ICON_CORNER_RADIUS];
     [_imgIcon setClipsToBounds:YES];
@@ -103,7 +103,7 @@ BOOL isVerticalPan;
         _lblTitle = [[UILabel alloc] init];
     }
     _lblTitle.frame = LABEL_TITLE_FRAME;
-    [_lblTitle setTextColor:[[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TitleColor"]];
+    [_lblTitle setTextColor:[[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBars.TitleColor"]];
     [_lblTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:LABEL_TITLE_FONT_SIZE]];
     [_lblTitle setNumberOfLines:1];
     if (![_lblTitle superview]) {
@@ -115,7 +115,7 @@ BOOL isVerticalPan;
         _lblMessage = [[UILabel alloc] init];
     }
     _lblMessage.frame = LABEL_MESSAGE_FRAME;
-    [_lblMessage setTextColor:[[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBar.TextColor"]];
+    [_lblMessage setTextColor:[[SSConfigManager sharedInstance] ColorFromConfigurationKeyPath:@"NotificationBars.TextColor"]];
     [_lblMessage setFont:[UIFont fontWithName:@"HelveticaNeue" size:LABEL_MESSAGE_FONT_SIZE]];
     [_lblMessage setNumberOfLines:2];
     _lblMessage.lineBreakMode = NSLineBreakByTruncatingTail;
