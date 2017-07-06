@@ -16,11 +16,11 @@
 #define IMAGE_VIEW_ICON_CORNER_RADIUS           3.0f
 #define IMAGE_VIEW_ICON_FRAME                   CGRectMake(15.0f, 8.0f, 20.0f, 20.0f)
 #define DRAG_HANDLER_FRAME                      CGRectMake([[UIScreen mainScreen] bounds].size.width/2-30,NOTIFICATION_VIEW_FRAME_HEIGHT-5,60,3)
-#define LABEL_TITLE_FRAME                       CGRectMake(45.0f, 3.0f, [[UIScreen mainScreen] bounds].size.width - 45.0f, 26.0f)
-#define LABEL_TITLE_FRAME_WITHOUT_IMAGE         CGRectMake(5.0f, 3.0f, [[UIScreen mainScreen] bounds].size.width - 5.0f, 26.0f)
+#define LABEL_TITLE_FRAME                       CGRectMake(45.0f, 3.0f, [[UIScreen mainScreen] bounds].size.width - 65.0f, 26.0f)
+#define LABEL_TITLE_FRAME_WITHOUT_IMAGE         CGRectMake(5.0f, 3.0f, [[UIScreen mainScreen] bounds].size.width - 25.0f, 26.0f)
 #define LABEL_MESSAGE_FRAME_HEIGHT              35.0f
-#define LABEL_MESSAGE_FRAME                     CGRectMake(45.0f, 25.0f, [[UIScreen mainScreen] bounds].size.width - 45.0f, LABEL_MESSAGE_FRAME_HEIGHT)
-#define LABEL_MESSAGE_FRAME_WITHOUT_IMAGE       CGRectMake(5.0f, 25.0f, [[UIScreen mainScreen] bounds].size.width - 5.0f, LABEL_MESSAGE_FRAME_HEIGHT)
+#define LABEL_MESSAGE_FRAME                     CGRectMake(45.0f, 25.0f, [[UIScreen mainScreen] bounds].size.width - 65.0f, LABEL_MESSAGE_FRAME_HEIGHT)
+#define LABEL_MESSAGE_FRAME_WITHOUT_IMAGE       CGRectMake(5.0f, 25.0f, [[UIScreen mainScreen] bounds].size.width - 25.0f, LABEL_MESSAGE_FRAME_HEIGHT)
 
 #define NOTIFICATION_VIEW_SHOWING_DURATION                  7.0f    /// second(s)
 #define NOTIFICATION_VIEW_SHOWING_ANIMATION_TIME            0.5f    /// second(s)
