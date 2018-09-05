@@ -10,7 +10,7 @@
 
 @interface HDNotificationView : UIToolbar <UIGestureRecognizerDelegate,UIGestureRecognizerDelegate>
 {
-    void (^ _onTouch)();
+    void (^ _onTouch)(void);
     
     UIImageView *_imgIcon;
     UILabel *_lblTitle;
@@ -23,9 +23,9 @@
 
 + (void)showNotificationViewWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message;
 + (void)showNotificationViewWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message isAutoHide:(BOOL)isAutoHide;
-+ (void)showNotificationViewWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message isAutoHide:(BOOL)isAutoHide onTouch:(void (^)())onTouch;
++ (void)showNotificationViewWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message isAutoHide:(BOOL)isAutoHide onTouch:(void (^)(void))onTouch;
 
 + (void)hideNotificationView;
-+ (void)hideNotificationViewOnComplete:(void (^)())onComplete;
++ (void)hideNotificationViewOnComplete:(void (^)(void))onComplete;
 
 @end

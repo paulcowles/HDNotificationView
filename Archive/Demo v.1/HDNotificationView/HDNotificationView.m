@@ -338,7 +338,7 @@ BOOL isVerticalPan;
 {
     [HDNotificationView showNotificationViewWithImage:image title:title message:message isAutoHide:isAutoHide onTouch:nil];
 }
-+ (void)showNotificationViewWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message isAutoHide:(BOOL)isAutoHide onTouch:(void (^)())onTouch
++ (void)showNotificationViewWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message isAutoHide:(BOOL)isAutoHide onTouch:(void (^)(void))onTouch
 {
     [[HDNotificationView sharedInstance] showNotificationViewWithImage:image title:title message:message isAutoHide:isAutoHide onTouch:onTouch];
 }
@@ -346,7 +346,7 @@ BOOL isVerticalPan;
 {
     [HDNotificationView hideNotificationViewOnComplete:nil];
 }
-+ (void)hideNotificationViewOnComplete:(void (^)())onComplete
++ (void)hideNotificationViewOnComplete:(void (^)(void))onComplete
 {
     [[HDNotificationView sharedInstance] hideNotificationViewOnComplete:onComplete];
 }
